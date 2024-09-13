@@ -157,7 +157,7 @@ Based on the log entries, the device appears to be a 3D printer with the followi
 
 9. Conclusion
 
-The boot log indicates that the device is a network-connected 3D printer with various peripherals and services. There
-are some issues during boot, primarily related to missing executables and kernel modules. Addressing these issues will
-improve system stability and functionality.
+    The boot log indicates that the device is a network-connected 3D printer with various peripherals and services. There
+    are some issues during boot, primarily related to missing executables and kernel modules. Addressing these issues will
+    improve system stability and functionality.
 
