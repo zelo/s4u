@@ -1,0 +1,1288 @@
+IPL g75a3331
+D-1e
+HW Reset
+cfe7b749  00000000
+Resume? N, addr 00000000
+miupll_266MHz
+MIU0 zq=0x003b
+miu_bw_set
+ut
+mi_1_init done
+utmi_2_init done
+utmi_3_init done
+usbpll init done......
+CPU=1000Mhz
+cpupll init done
+SPI 54M
+clk_init done 
+P1 USB_rterm trim=0x0000
+P1 USB_HS_TX_CURRENT trim=0x0001
+P2 USB_rterm trim=0x0000
+P2 USB_HS_TX_CURRENT trim=0x0000
+P3 USB_rterm trim=0x0000
+P3 USB_HS_TX_CURRENT trim=0x0000
+PM_vol_bgap trim=0x0001
+GCR_SAR_DATA trim
+=0x0192
+ETH 10T output swing trim=0x0010
+ETH 100T output swing trim=0x0010
+ETH RX input impedance trim=0x0000
+ETH TX output impedance trim=0x0000
+MIPI_HS_RTERM trim=0x0001
+MIPI_LP_RTERM trim=0x0000
+128MB
+BIST0_0001
+
+
+
+-OK
+Enable MMU and CACHE
+Load IPL_CUST from SPINAND
+QUAD MODE ENABLE
+Checksum OK
+
+IPL_CUST gabf224a
+runUBOOT()
+runUBOOT()
+[SPINAND]
+SPI 54M
+
+Load UBOOT from SPINAND
+ 
+-Verify UBOOT CRC32 passed!
+ -Decompress UBOOT XZ
+
+
+
+
+  decomp_size=0x000aa53c
+D
+isable MMU and D-cache before jump to UBOOT�
+
+U-Boot 2015.01 (Jul 03 2024 - 14:31:31), Build: jenkins-PPL_100-PACKAGE-OS-CL103-811
+
+Version: I2g20b0ae6
+[WDT] Enalbe WATCHDOG 10s
+       Watchdog enabled
+I2C:   ready
+DRAM:  
+WARNING: Caches not enabled
+
+SPINAND: _MDrv_SPINAND_GET_INFO: Found SPINAND INFO 
+(0xC8) (0x1) 
+SPINAND: board_nand_init: CIS contains part info
+128 MiB
+MMC:   MStar SD/MMC: 0
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   No ethernet found.
+Saving Environment to NAND...
+Erasing redundant NAND...
+Erasing at 0x4a0000 -- 100% complete.
+complete.
+Writing to redundant NAND... OK
+env_dispout = SLM40_480x800_ROTATE
+gpio debug MHal_GPIO_Pad_Set: pin=59
+gpio debug MHal_GPIO_Pad_Set: pin=17
+gpio debug MHal_GPIO_Pad_Set: pin=18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aving Environment to NAND...
+Erasing NAND...
+Erasing at 0x440000 --  50% complete.
+460000 -- 100% complete.
+Writing to NAND... OK
+(Re)start USB 0...
+Check USB port[0]:
+[USB] usb_lowlevel_init++
+[USB] USB EHCI LIB VER: 2018.01.12
+[USB] Port 0 is Enabled
+[USB] TV_usb_init (UTMI Init) ++
+[USB] UTMI Base 1f284200
+[USB] UHC Base 1f284800
+[USB] USBC Base 1f284600
+[USB] BC Base 1f284400
+[USB] config miu select [
+70] [f8] [ef] ][ef]
+[USB] enable miu lower bound address subtraction
+[USB] init squelch level 0x2
+[USB] TV_usb_init--
+[USB] Usb_host_Init++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[USB] Async base addr: 0x3eba080 
+[USB] Reg 0x28: 0xa080 0x3eb
+[USB] disable run
+[USB] Host Speed:0 
+[USB] enable aynch 
+[USB] Usb_host_Init--
+[USB] usb_lowlevel_init--
+scanning bus for devices... 
+[USB] interface[0] conf:1 value 0: 
+1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+(Re)start USB 1...
+Check USB port[1]:
+[USB] usb_lowlevel_init++
+[USB] USB EHCI LIB VER: 2018.01.12
+[USB] Port 1 is Enabled
+[USB] TV_usb_init (UTMI Init) ++
+[USB] UTMI Base 1f284a00
+[USB] UHC Base 1f285000
+[USB] USBC Base 1f284e00
+[USB] BC Base 1f284c00
+[USB] config miu select [70] [f8] [ef] ][ef]
+[USB] enable miu lower bound address subtraction
+[USB] init squelch level 0x2
+[USB] TV_usb_init--
+[USB] Usb_host_Init++
+[USB] Async base addr: 0x3eba080 
+[USB] Reg 0x28: 0xa080 0x3eb
+[USB] disable run
+[USB] Host Speed:2 
+[USB] enable aynch 
+[USB] Usb_host_Init--
+[USB] usb_lowlevel_init--
+scanning bus for devices... 
+[USB] interface[0] conf:1 value 9: 
+Wait for hub reset....
+checking hub ports...
+usb_get_configuration_no: failed to get descriptor - too long: 1992
+usb_new_device: Cannot read configuration, skipping device a108:2240
+
+[USB] interface[0] conf:1 value ff: 
+3 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+
+NAND read: device 0 offset 0x4e0000, size 0x60000
+Time:35614 us, speed:11041 KB/s
+ 393216 bytes read: OK
+
+NAND read: device 0 offset 0x540000, size 0x1fc500
+Time:176410 us, speed:11802 KB/s
+ 2082048 bytes read: OK
+##  Booting kernel from Legacy Image at 22000000 ...
+   Image Name:   MVX4##I2M#g20b0ae65fKL_LX409##[B
+   Image Type:   ARM Linux Kernel Image (lzma compressed)
+   Data Size:    2081984 Bytes = 2 MiB
+   Load Address: 20008000
+   Entry Point:  20008000
+   Verifying Checksum ... OK
+-usb_stop(USB_PORT0)
+-usb_stop(USB_PORT1)
+-usb_stop(USB_PORT2)
+   Uncompressing Kernel Image ... 
+[XZ] !!!reserved 0x21000000 length=0x 1000000 for xz!!
+  XZ: uncompressed size=0x434000, ret=7
+OK
+atags:0x20000000
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x0
+Linux version 4.9.84 (root@VHS-SZL-0041) (gcc version 8.2.1 20180802 (GNU Toolchain for the A-profile Architecture 8.2-2018-08 (arm-rel-8.23)) ) #18 SMP PREEMPT Wed Jul 3 14:33:32 CST 2024
+CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=50c5387d
+CPU: div instructions available: patching division code
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+early_atags_to_fdt() success
+OF: fdt:Machine model: INFINITY2M SSC011A-S01A-S
+LXmem is 0x7f00000 PHYS_OFFSET is 0x20000000
+Add mem start 0x20000000 size 0x7f00000!!!!
+
+LX_MEM  = 0x20000000, 0x7f00000
+LX_MEM2 = 0x0, 0x0
+LX_MEM3 = 0x0, 0x0
+EMAC_LEN= 0x0
+DRAM_LEN= 0x0
+deal_with_reserved_mmap memblock_reserve success mmap_reserved_config[0].reserved_start=
+0x27c00000
+
+deal_with_reserve_mma_heap memblock_reserve success mma_config[0].reserved_start=
+0x27700000
+
+cma: Reserved 4 MiB at 0x27200000
+Memory policy: Data cache writealloc
+percpu: Embedded 14 pages/cpu @c76bd000 s25880 r8192 d23272 u57344
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 30978
+Kernel command line: console=ttyS0,115200 ubi.mtd=UBI,2048 root=ubi:rootfs ro rootfstype=ubifs init=/linuxrc rootwait=1 LX_MEM=0x7f00000 mma_heap=mma_heap_name0,miu=0,sz=0x500000 mma_memblock_remove=1 highres=)
+PID hash table entries: 512 (order: -1, 2048 bytes)
+Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+Memory: 111904K/124928K available (2445K kernel code, 251K rwdata, 1300K rodata, 164K init, 180K bss, 8928K reserved, 4096K cma-reserved)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+    vmalloc : 0xc8000000 - 0xff800000   ( 888 MB)
+    lowmem  : 0xc0000000 - 0xc7f00000   ( 127 MB)
+    modules : 0xbf800000 - 0xc0000000   (   8 MB)
+      .text : 0xc0008000 - 0xc026b644   (2446 kB)
+      .init : 0xc03d3000 - 0xc03fc000   ( 164 kB)
+      .data : 0xc03fc000 - 0xc043ad28   ( 252 kB)
+       .bss : 0xc043c000 - 0xc04693b8   ( 181 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+Preemptible hierarchical RCU implementation.
+        Build-time adjustment of leaf fanout to 32.
+        RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+RCU: Adjusting geometry for rcu_fanout_leaf=32, nr_cpu_ids=2
+NR_IRQS:16 nr_irqs:16 16
+ms_init_main_intc: np->name=ms_main_intc, parent=gic
+ms_init_pm_intc: np->name=ms_pm_intc, parent=ms_main_intc
+ss_init_gpi_intc: np->name=ms_gpi_intc, parent=ms_main_intc
+Find CLK_cpupll_clk, hook ms_cpuclk_ops
+<CLK_hemcu_216m> no mux-width, set to default 2 bits
+<CLK_miu_xd2miu> no mux-width, set to default 2 bits
+arm_arch_timer: Architected cp15 timer(s) running at 6.00MHz (virt).
+clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x1623fa770, max_idle_ns: 440795202238 ns
+sched_clock: 56 bits at 6MHz, resolution 166ns, wraps every 4398046511055ns
+Switching to timer-based delay loop, resolution 166ns
+console [ttyS0] enabled
+Calibrating delay loop (skipped), value calculated using timer frequency.. 12.00 BogoMIPS (lpj=6000)
+pid_max: default: 4096 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+CPU: Testing write buffer coherency: ok
+CPU0: update cpu_capacity 1024
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x20008240 - 0x2000828c
+CPU1: update cpu_capacity 1024
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+Brought up 2 CPUs
+SMP: Total of 2 processors activated (24.00 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+futex hash table entries: 16 (order: -2, 1024 bytes)
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+
+
+Version : MVX4##I2M#g20b0ae65fKL_LX409##[BR:reference-no-samba]#XVM
+
+GPIO: probe end[ss_gpi_intc_domain_alloc] hw:0 -> v:55
+[Padmux]reset Pad_47(reg 0x101e03; mask0x70) to GPIO(org: UART0_MODE_1)
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 8 bytes.
+SCSI subsystem initialized
+media: Linux media interface: v0.10
+Linux video capture interface: v2.00
+clocksource: Switched to clocksource arch_sys_counter
+NET: Registered protocol family 2
+TC established hash table entries: 1024 (order: 0, 4096 bytes)
+TCP bind hash table entries: 1024 (order: 2, 20480 bytes)
+TCP: Hash tables configured (established 1024 bind 1024)
+UDP hash table entries: 128 (order: 0, 6144 bytes)
+UDP-Lite hash table entries: 128 (order: 0, 6144 bytes)
+NET: Registered protocol family 1
+hw perfevents: enabled with armv7_cortex_a7 PMU driver, 5 counters available
+workingset: timestamp_bits=30 max_order=15 bucket_order=0
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+exFAT: Version 1.2.9
+io scheduler noop registered
+io scheduler deadline registered (default)
+i2c /dev entries driver
+IR NEC protocol handler initialized
+IR RC5(x/sz) protocol handler initialized
+IR RC6 protocol handler initialized
+IR JVC protocol handler initialized
+IR Sony protocol handler initialized
+IR SANYO protocol handler initialized
+IR Sharp protocol handler initialized
+IR MCE Keyboard/mouse protocol handler initialized
+IR XMP protocol handler initialized
+1f221000.uart0: ttyS0 at MMIO 0x0 (irq = 30, base_baud = 10800000) is a unknown
+1f220400.uart2: ttyS2 at MMIO 0x0 (irq = 31, base_baud = 10800000) is a unknown
+1f221400.uart2: ttyS3 at MMIO 0x0 (irq = 33, base_baud = 10800000) is a unknown
+[ mstar_mci_init() ] 
+eMMC: no SD 1006
+>> [emmc] get dts [bus-width]: 4
+>> [emmc] get dts [max-clks]: 0
+>> [emmc] get dts [clk-driving]: 0
+>> [emmc] get dts [cmd-driving]: 0
+>> [emmc] get dts [data-driving]: 0
+[ms_cpufreq_init] Current clk=1005326304
+mstar_spinand_probe: mstar_spinand enableClock
+MSYS: DMEM request: [BDMA]:0x00000840
+MSYS: DMEM request: [BDMA]:0x00000840 success, CPU phy:@0x27242000, virt:@0xC7242000
+MDrv_SPINAND_Init: Detected ID: MID =c8, DID =1
+_dumpNandInformation:warning, Bytes / Page :  2048
+_dumpNandInformation:warning, Pages / Block:  64
+_dumpNandInformation:warning, Sector/ Page :  512
+_dumpNandInformation:warning, Spare / Page :  64
+_dumpNandInformation:warning, Current config r:4 w:4 drv:1
+mstar_spinand_probe: Magic memcmp pass
+mstar_spinand_probe: Get partition (Block 0 : page 1)
+mstar_spinand_probe: CIS contains part info
+mstar_spinand_probe: Before nand_scan()...
+13 cmdlinepart partitions found on MTD device nand0
+mstar_spinand_probe: Mtd parts parse
+Creating 13 MTD partitions on "nand0":
+0x000000140000-0x0000001a0000 : "IPL0"
+0x0000001a0000-0x000000200000 : "IPL1"
+0x000000200000-0x000000260000 : "IPL_CUST0"
+0x000000260000-0x0000002c0000 : "IPL_CUST1"
+0x0000002c0000-0x000000380000 : "UBOOT0"
+0x000000380000-0x000000440000 : "UBOOT1"
+0x000000440000-0x000000480000 : "ENV"
+0x000000480000-0x0000004c0000 : "ENV1"
+0x0000004c0000-0x0000004e0000 : "KEY_CUST"
+0x0000004e0000-0x000000540000 : "LOGO"
+0x000000540000-0x000000a40000 : "KERNEL"
+0x000000a40000-0x000000f40000 : "RECOVERY"
+0x000000f40000-0x000008000000 : "UBI"
+mmc0: new high speed MMC card at address 0001
+mmcblk0: mmc0:0001 8GTF4R 7.28 GiB 
+mmcblk0boot0: mmc0:0001 8GTF4R partition 1 4.00 MiB
+mmcblk0boot1: mmc0:0001 8GTF4R partition 2 4.00 MiB
+mmcblk0rpmb: mmc0:0001 8GTF4R partition 3 512 KiB
+ mmcblk0: p1 p2 p3
+NET: Registered protocol family 17
+[mstar_pm_init] resume_pbase=0x20011455, suspend_imi_vbase=0xC800D000
+ThumbEE CPU extension supported.
+Registering SWP/SWPB emulation handler
+ubi0: attaching mtd12
+ubi0: scanning is finished
+ubi0: attached mtd12 (name "UBI", size 112 MiB)
+ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 126976 bytes
+ubi0: min./max. I/O unit sizes: 2048/2048, sub-page size 2048
+ubi0: VID header offset: 2048 (aligned 2048), data offset: 4096
+ubi0: good PEBs: 902, bad PEBs: 0, corrupted PEBs: 0
+ubi0: user volume: 5, internal volumes: 1, max. volumes count: 128
+ubi0: max/mean erase counter: 4/1, WL threshold: 4096, image sequence number: 0
+ubi0: available PEBs: 32, total reserved PEBs: 870, PEBs reserved for bad PEB handling: 20
+hctosys: unable to open rtc device (rtc0)
+ubi0: background thread "ubi_bgt0d" started, PID 482
+OF: fdt:not creating '/sys/firUBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name "rootfs", R/O mode
+UBIFS (ubi0:0): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS (ubi0:0): FS size: 43552768 bytes (41 MiB, 343 LEBs), journal size 5967872 bytes (5 MiB, 47 LEBs)
+UBIFS (ubi0:0): reserved for root: 0 bytes (0 KiB)
+UBIFS (ubi0:0): media format: w4/r0 (latest is w4/r0), UUID C923870D-87D8-4A83-98C8-25505FA5259B, small LPT model
+VFS: Mounted root (ubifs filesystem) readonly on device 0:13.
+devtmpfs: mounted
+This architecture does not have kernel memory protection.
+hostname: can't open '/etc/hostname': No such file or directory
+Starting syslogd: /etc/init.d/S01syslogd: line 16: start-stop-daemon: not found
+FAIL
+Starting klogd: /etc/init.d/S02klogd: line 16: start-stop-daemon: not found
+FAIL
+Running sysctl: OK
+Starting mdev... /etc/init.d/S10mdev: line 12: start-stop-daemon: not found
+ERROR
+modprobe: can't change directory to '4.9.84': No such file or directory
+Saving random seed: SKIP (read-only file system detected)
+UBIFS (ubi0:1): background thread "ubifs_bgt0_1" started, PID 516
+UBIFS (ubi0:1): recovery needed
+UBIFS (ubi0:1): recovery completed
+UBIFS (ubi0:1): UBIFS: mounted UBI device 0, volume 1, name "miservice"
+UBIFS (ubi0:1): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS (ubi0:1): FS size: 9269248 bytes (8 MiB, 73 LEBs), journal size 1650688 bytes (1 MiB, 13 LEBs)
+UBIFS (ubi0:1): reserved for root: 0 bytes (0 KiB)
+UBIFS (ubi0:1): media format: w4/r0 (latest is w4/r0), UUID 9F173374-BB0C-4E00-A7E2-D01714EDA605, small LPT model
+UBIFS (ubi0:2): background thread "ubifs_bgt0_2" started, PID 519
+UBIFS (ubi0:2): recovery needed
+UBIFS (ubi0:2): recovery completed
+UBIFS (ubi0:2): UBIFS: mounted UBI device 0, volume 2, name "customer"
+UBIFS (ubi0:2): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS (ubi0:2): FS size: 39489536 bytes (37 MiB, 311 LEBs), journal size 5459968 bytes (5 MiB, 43 LEBs)
+UBIFS (ubi0:2): reserved for root: 0 bytes (0 KiB)
+UBIFS (ubi0:2): media format: w4/r0 (latest is w4/r0), UUID FD6B0C63-C885-49E5-81CB-FEBF698BA489, small LPT model
+UBIFS (ubi0:3): background thread "ubifs_bgt0_3" started, PID 522
+UBIFS (ubi0:3): recovery needed
+UBIFS (ubi0:3): recovery completed
+UBIFS (ubi0:3): UBIFS: mounted UBI device 0, volume 3, name "appconfigs"
+UBIFS (ubi0:3): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS (ubi0:3): FS size: 3047424 bytes (2 MiB, 24 LEBs), journal size 1142785 bytes (1 MiB, 8 LEBs)
+UBIFS (ubi0:3): reserved for root: 0 bytes (0 KiB)
+UBIFS (ubi0:3): media format: w4/r0 (latest is w4/r0), UUID 98A2BC8F-6997-475C-8033-B02394788C78, small LPT model
+UBIFS (ubi0:4): background thread "ubifs_bgt0_4" started, PID 525
+UBIFS (ubi0:4): recovery needed
+UBIFS (ubi0:4): recovery completed
+UBIFS (ubi0:4): UBIFS: mounted UBI device 0, volume 4, name "parameter"
+UBIFS (ubi0:4): LEB size: 126976 bytes (124 KiB), min./max. I/O unit sizes: 2048 bytes/2048 bytes
+UBIFS (ubi0:4): FS size: 3047424 bytes (2 MiB, 24 LEBs), journal size 1142785 bytes (1 MiB, 8 LEBs)
+UBIFS (ubi0:4): reserved for root: 0 bytes (0 KiB)
+UBIFS (ubi0:4): media format: w4/r0 (latest is w4/r0), UUID 5C92652F-1CDB-40DB-A7BB-690706671C43, small LPT model
+mhal: loading out-of-tree module taints kernel.
+mhal: module license 'PROPRIETARY' taints kernel.
+Disabling lock debugging due to kernel taint
+mhal driver init
+jpe driver probed
+DivpProcInit 515
+module [sys] init
+MI_SYSCFG_SetupMmapLoader default_config_path:/config/config_tool, argv1:/config/load_mmap,argv2:/config/mmap.ini
+Function = init_glob_miu_kranges, Line = 640, Insert KProtect for LX @ MIU: 0
+Function = init_glob_miu_kranges, Line = 649, [INIT] for LX0 kprotect: from 0x20000000 to 0x27F00000, using block 0
+config...... strPath:/config/config_tool, argv0:/config/load_config
+function:parese_Cmdline,pCmd_Section:0x7f00000
+mm
+a_
+he
+ap
+_n
+am
+e0
+    miu=0,sz=500000  reserved_start=27700000
+r_front->miuBlockIndex:0,r_front->start_cpu_bus_pa:0x20000000,r_front->start_cpu_bus_pa+r_front->length:0x27700000
+r_back->miuBlockIndex:1,r_back->start_cpu_bus_pa:0x27c00000,r_back->start_cpu_bus_pa+r_back->length:0x27f00000
+mi_sys_mma_allocator_create success, heap_base_addr=27700000 length=500000 
+Kernel CONFIG_HZ = 1000
+Sigmastar Module version: project_commit.aa96c08 sdk_commit.050b243 /home/causer/swnas/workspace/ALL--ALKAID--ReleaseBuild/alka
+module [gfx] init
+module [disp] init
+module [panel] init
+[ss_gpi_intc_domain_alloc] hw:3 -> v:56
+----------gsl_ts_init----------
+[hr2046]:hr2046_init
+Goodix-TS 1-005d: ID 4097, version: 1040
+Goodix-TS 1-005d: Direct firmware load for goodix_4097_cfg.bin failed with error -2
+input: Goodix Capacitive TouchScreen as /devices/soc0/soc/1f223200.i2c1/i2c-1/1-005d/input/input0
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+ntfs: driver 2.1.32 [Flags: R/O MODULE].
+insmod: can't insert '/config/modules/4.9.84/exfat.ko': No such file or directory
+fuse init (API version 7.26)
+MSYS: DMEM request: [AESDMA_ENG]:0x00001000
+MSYS: DMEM request: [AESDMA_ENG]:0x00001000 success, CPU phy:@0x27243000, virt:@0xC7243000
+MSYS: DMEM request: [AESDMA_ENG1]:0x00001000
+MSYS: DMEM request: [AESDMA_ENG1]:0x00001000 success, CPU phy:@0x27244000, virt:@0xC7244000
+cryptodev: driver 1.10(a1e738a) loaded.
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Mstar_ehc_init version:20180309
+ehci monitor start running
+Sstar-ehci-2 H.W init
+Titania3_series_start_ehc start
+[USB] config miu select [70] [e8] [ef] [ef]
+[USB] enable miu lower bound address subtraction
+[USB] init squelch level 0x2
+[USB] no platform_data, device tree coming
+[USB][EHC] dma coherent_mask 0xffffffffffffffff mask 0xffffffffffffffff
+BC disable 
+[USB] soc:Sstar-ehci-2 irq --> 38
+Sstar-ehci-2 soc:Sstar-ehci-2: EHCI Host Controller
+Sstar-ehci-2 soc:Sstar-ehci-2: new USB bus registered, assigned bus number 1
+Sstar-ehci-2 soc:Sstar-ehci-2: irq 38, io mem 0xfd285000
+usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb1: Product: EHCI Host Controller
+usb usb1: Manufacturer: Linux 4.9.84 ehci_hcd
+usb usb1: SerialNumber: mstar
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+Sstar-ehci-1 H.W init
+Titania3_series_start_ehc start
+[USB] config miu select [70] [e8] [ef] [ef]
+[USB] enable miu lower bound address subtraction
+[USB] init squelch level 0x2
+[USB] no platform_data, device tree coming
+[USB][EHC] dma coherent_mask 0xffffffffffffffff mask 0xffffffffffffffff
+BC disable 
+[USB] soc:Sstar-ehci-1 irq --> 37
+Sstar-ehci-1 soc:Sstar-ehci-1: EHCI Host Controller
+Sstar-ehci-1 soc:Sstar-ehci-1: new USB bus registered, assigned bus number 2
+Sstar-ehci-1 soc:Sstar-ehci-1: irq 37, io mem 0xfd284800
+usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb2: Product: EHCI Host Controller
+usb usb2: Manufacturer: Linux 4.9.84 ehci_hcd
+usb usb2: SerialNumber: mstar
+hub 2-0:1.0: UB hub found
+hub 2-0:1.0: 1 port detected
+usbcore: registered new interface driver usb-storage
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+usbcore: registered new interface driver usbserial
+usbcore: registered new interface driver ch341
+usbserial: USB Serial support registered for ch341-uart
+==20180309==> hub_port_init 1 #0
+Plug in USB Port2
+usbcore: registered new interface driver pl2303
+usbserial: USB Serial support registered for pl2303
+usbcore: registered new interface driver cdc_acm
+cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+==20180309==> hub_port_init 1 #0
+Plug in USB Port1
+libphy: Fixed MDIO Bus: probed
+usb 1-1: new high-speed USB device number 2 using Sstar-ehci-2
+MSYS: DMEM request: [emac0_buff]:0x00000812
+MSYS: DMEM request: [emac0_buff]:0x00000812 success, CPU phy:@0x2724B000, virt:@0xC724B000
+env name CurrentVersion value 0.0.0
+env name EMMCUpgradeEnable value 0
+env name Mstarbin value 2015070libphy: mdio: probed
+mdio_bus mdio-bus@emac0: /soc/emac0/mdio-bus@emac0/ethernet-phy@0 has invalid PHY address
+9
+env nammdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 0
+e UpgradeDev value usb
+env random: fast init done
+name UpgradeDone value 1
+env nammdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 1
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 2
+e Upgrademdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 3
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 4
+usb 2-1: new full-speed USB device number 2 using Sstar-ehci-1
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 5
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 6
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 7
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 8
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 9
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 10
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 11
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 12
+FAT-fs (mmcblk0p1): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 13
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 14
+usb 1-1: New USB device found, idVendor=1a40, idProduct=0801
+usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+usb 1-1: Product: USB 2.0 Hub
+Image value ChituUhub 1-1:1.0: USB hub found
+hub 1-1:1.0: 4 ports detected
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 15
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 16
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 17
+
+env name Upgrmdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 18
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 19
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 20
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 21
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 22
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 23
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 24
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 25
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 26
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 27
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 28
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 29
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 30
+mdio_bus mdio-bus@emac0: scan phy ethernet-phy at address 31
+usb 2-1: New USB device found, idVendor=046d, idProduct=c52b
+usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+adeStatus value 0
+env name autoestart value 0
+env name beep_pwm_channel value 3
+env nausb 2-1: Product: USB Receiver
+usb 2-1: Manufacturer: Logitech
+me beep_pwm_pad value 12
+env name bootargs value console=ttyS0,115200 ubi.mtd=UBI,2048 root=ubi:rootfs ro rootfstype=ubifs init=/linuxrc rootwait=1 LX_MEM=0x7f00000 mma_heap=mma_heap_name0,miu=0,sz=0x500000 mma_memblock_reminput: Logi1
+ove=1 highres=on mmap_reserved=fb,miu=0,sz=0x300000,max_start_off=0x7C00000,max_end_off=0x7F00000 mtdparts=nand0:384k@1280k(IPL0),384k(IPL1),384k(IPL_CUST0),384k(IPL_CUST1),768k(UBOOT0),768k(UBOOT1),256k(ENV),0
+),0x500000(RECOVERY),-(UBI)
+env name bootcmdinput: Logitech USB Receiver as /devices/soc0/soc/soc:Sstar-ehci-1/usb2/2-1/2-1:1.1/0003:046D:C52B.0002/input/input2
+ value nand read.e 0x22000000 KERNEL 0x1fc500; ; bootm 0x22000000; nand read.e 0x22000000 RECOVERY 0x1fc500; bootm 0x22000hid-generic 0003:046D:C52B.0002: input,hiddev0: USB HID v1.11 Mouse [Logitech USB Recei1
+000;
+env name bootdhid-generic 0003:046D:C52B.0003: hiddev0: USB HID v1.11 Device [Logitech USB Receiver] on usb-mstar-1/input2
+elay value 1
+==20180309==> hub_port_init 3 #0
+FAT-fs (mmcblk0p2): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[EXFAT] trying to mount...
+[EXFAT] mounted successfully
+[emac_phy_connect][3287] connected mac emac0 to PHY at mdio-bus@emac0:00 [uid=11112222, driver=SStar 10/100 Ethernet Phy]
+[EXFAT] trying to unmount...
+[EXFAT] unmounted successfully
+env name chitu_fusb 1-1.3: new high-speed USB device number 3 using Sstar-ehci-2
+actory_mode value 2
+env name default_off_pad value 4,5
+env name dispout value SLM40_480x800_ROTATE
+env name dnsip value 0.0.0.0
+env name ethact value sstar_emac
+env name ethaddr value 66:66:68:55:f8:20
+env name fileaddr value 23a024f8
+env name filesize value 193008
+env name gatewayip value 0.0.0.0
+env name ipaddr value 192.168.0.185
+env name lcd_backlight_inversion value 0
+env name lcd_backlight_pad value 90
+env name lcd_reset_inversion value 0
+env name lcd_reset_pad value 89
+env name mtddevname value IPL0
+env name mtddevnum value 0
+env name mtdids value nand0=nand0
+env name mtdparts value mtdparts=nand0:384k@1280k(IPL0),384k(IPL1),384k(IPL_CUST0),384k(IPL_CUST1),768k(UBOOT0),768k(UBOOT1),256k(ENV),256k(ENV1),0x20000(KEY_CUST),0x60000(LOGO),0x500000(KERNEL),0x500000(RECOV)
+env name netmask value 255.255.255.0
+env name partition value nand0,0
+env name rotate_enable value 0
+env name rotate_mode value 0
+env name serverip value 192.168.0.2
+env name shutdown_tip value 0
+env name stderr value serial
+env name sFAT-fs (mmcblk0p3): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[EXFAT] trying to mount...
+tdin value serial
+env name stdout value serial
+env name usb_folde[EXFAT] moented successfully
+r value images
+eusb 1-1.3: New USB device found, idVendor=a108, idProduct=2240
+usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+nv name user_pausb 1-1.3: Product: UC01 HD Camera
+usb 1-1.3: Manufacturer: Sonsii Intelligent Technology Co., Ltd.
+usb 1-1.3: SerialNumber: uc01
+[EXFAT] trying to unmount...
+[EXFAT] unmounted successfully
+rtition_reset value 0
+umount: can't unmount /media/mmcblk0p1: Invalid argument
+NTFS signature is missing.
+Failed to mount '/dev/mmcblk0p1': Invalid argument
+The device '/dev/mmcblk0p1' doesn't have a valid NTFS.
+Maybe you selected the wrong device? Or the whole disk instead of a
+partition (e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+umount: can't unmount /media/mmcblk0p2: Invalid argument
+hid-generic 0003:A108:2240.0004: hiddev0: USB HID v1.01 Device [SonsiI Intelligent Technology Co., Ltd. UC01 HD Camera] on usb-mstar-1.3/input4
+
+Failed to mount '/dev/mmcblk0p2': Invalid argument
+The device '/dev/mmcblk0p2' doesn't have a valid NTFS.
+Maybe you selected the wrong device? Or the whole disk instead of ==20180309==> hub_port_init 4 #0
+a
+partition (e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+umount: can't unmount /media/mmcblk0p3: Invalid argument
+NTFS signature is missing.
+Failed to mount '/dev/mmcblk0p3': Invalid argument
+The device '/dev/mmcblk0p3' doesn't have a valid NTFS.
+Maybe you selected the wrong device? Or the whole disk instead of a
+partition (e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+insmod: can't insert '/config/modules/4.9.84/videodev.ko': No such file or directory
+insmod: can't insert '/config/modules/4.9.84/v4l2-couvcvideo: Found UVC 1.10 device UC01 HD Camera (a108:2240)
+v4l2_device_register
+uvc_ctrl_init_device
+uvc_scan_device
+uvc_register_chains
+mmon.ko': No such file or directorusb 1-1.4: new high-speed USB device number 4 using Sstar-ehci-2
+uvcvideo 1-1.3:1.0: Entity type for entity Extension 4 was not initialized!
+uvcvideo 1-1.3:1.0: Entity type for entity Processing 2 was not initialized!
+uvcvideo 1-1.3:1.0: Entity type for entity Camera 1 was not initialized!
+media_device_register
+input: UC01 HD Camera as /devices/soc0/soc/soc:Sstar-ehci-2/usb1/1-1/1-1.3/1-1.3:1.0/input/input3
+uvcvideo: Found UVC 1.10 device UC01 HD Camera (a108:2240)
+v4l2_device_register
+uvc_ctrl_init_device
+uvc_scan_device
+uvc_register_chains
+y
+insmod: can't insert '/config/moduluvcvideo: Unable to create debugfs 1-3 directory.
+uvcvideo 1-1.3:1.2: Entity type for entity Processing 9 was not initialized!
+uvcvideo 1-1.3:1.2: Entity type for entity Camera 8 was not initialized!
+media_device_register
+input: UC01 HD Camera as /devices/soc0/soc/soc:Sstar-ehci-2/usb1/1-1/1-1.3/1-1.3:1.2/input/input4
+usbcore: registered new interface driver uvcvideo
+USB Video Class driver (1.1.1)
+es/4.9.84/v4l2-dv-timings.ko': No such file or directory
+hl_tpool_create_thread 0xb0e9c
+[sspi]:cs 8 sck 9 miso 11 mosi 10 config 14 status 73 done 13
+usb 1-1.4: New USB device found, idVendor=0bda, idProduct=c811
+usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-1.4: Product: 802.11ac NIC
+usb 1-1.4: Manufacturer: Realtek
+usb 1-1.4: SerialNumber: 123456
+[gpiospi]:sck 1 miso 3 mosi 2
+[cs1237]:sda 49 sck 50 irq 55
+
+(none) login: esbcore: registered new interface driver rtl8821cu
+hl_tpool_create_thread 0xa836c
+echo to syspath /sys/class/block/mmcblk0p2/uevent
+echo to syspath /sys/class/block/mMcblk0p3/uevent
+echo to syspath /sys/class/block/mmcblk0p1/uevent
+echo to syspath /sys/class/block/mmcblk0/uevent
+umount: can't unmount /media/mmcblk0p2: Invalid argument
+NTFS signature is missing.
+Failed to mount '/dev/mmcblk0p2': Invalid argument
+The device '/dev/mmcblk0p2' doesn't have a valid NTFS.
+Maybe you selected the wrongFAT-fs (mmcblk0p2): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[EXFAT] trying to mount...
+[emac_phy_link_adjust] EMAC Link Down 
+ device? Or the[EXFAT] mounted successfully
+ whole disk instead of a
+partition (e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+umount: can't unmount /media/mmcblk0p3: Invalid argument
+NFS signature is missing.
+Failed to mount '/dev/mmcblk0p3': Invalid argument
+The device '/dev/mmcblk0p3' doesn't have a valid NTFS.
+Maybe you selected the wronFAT-fs (mmcblk0p3): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+[EXFAT] trying to mount...
+g device? Or the whole disk instead of a
+partition ([EXFAT] mounted successfully
+e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+umount: can't unmount /media/mmcblk0p1: Invalid argument
+NTFS signature is missing.
+Failed to mount '/dev/mmcblk0p1': Invalid argument
+The device '/dev/mmcblk0p1' doesn't have a valid NTFS.
+Maybe you selected the wrongFAT-fs (mmcblk0p1): utf8 is not a recommended IO charset for FAT filesystems, filesystem will be case sensitive!
+FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+ device? Or the whole disk instead of a
+partition (e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+hl_tpool_create_thread 0xa2d28
+hl_tpool_create_thread 0xa3210
+[params][Info][5565]:screen_rotate_mode = 0
+[param_ref][Debug][5570]:mp crc success
+ERR: FUNC utils_params_read LINE 18 ERRNO No such file or directory COND (fp != ((void *)0))
+[param_ref][Debug][5585]:uip get value[1165] : {"language":1,"guide_done":0,"beep_switch":1,"indicate_light_switch":0,"network_interface":0,"network_eth_mode":1,"network_wlan_mode":1,"accumulative_print_numbert
+[GOP]HalGopSetArgb1555Alpha 1208: GOPId=0x11 not support
+[GOP]HalGopSetArgb1555Alpha 1208: GOPId=0x11 not support
+
+sstar_FB_SetBlending 402 u8GOP=1,u8win=0 aType=1 u8constAlpha=255
+,0,0,1.79999995231[param_ref][Debug][5586]:crc success
+umount: can't unmount /media/mmcblk0: Invalid argument
+NTFS signature is missing.
+Failed to mount '/dev/mmcblk0': Invalid argument
+The device '/dev/mmcblk0' doesn't have a valid NTFS.
+Maybe you selected the wrong device? Or the whole disk instead of a
+partition (e.g. /dev/hda, not /dev/hda1)? Or the other way around?
+mount: mounting /dev/mmcblk0 on /media/mmcblk0 failed: Device or resource busy
+screen_rotate_mode = 0
+Freeing fb memory: 3072K
+total face_number = 8
+face_index 0 family_name Roboto + Cairo + Noto SAns CJK JP Bold style_name Bold
+face_index 1 family_name Roboto + Cairo + Noto Sans CJK JP Regular style_name Regular
+face_index 2 family_name Roboto + Cairo + Noto Sans CJK KR Bold style_name Bold
+face_index 3 family_name Roboto + Cairo + oto Sans CJK KR Regular style_name Regular
+face_index 4 family_name Roboto + Cairo + Noto Sans CJK SC Bold style_name Bold
+face_index 5 family_name Roboto + Cairo + Noto Sans CJK SC Regular style_name Regular
+face_index 6 family_name Roboto + Cairo + Noto Sans CJK TC Bold style_name Bold
+face_index 7 family_name Roboto + Cairo + Noto Sans CJK TC Regular style_name Regular
+width 480, height 800
+[MS_PM_INTC] hw:74 -> v:57
+[MS_PM_INTC] hw:75 -> v:58
+[ss_gpi_intc_domain_alloc] hw:58 -> v:59
+[ss_gpi_intc_domain_alloc] hw:42 -> v:60
+[lattice][Info][10122]:fpga_lattice_init ok
+ERROR: Bus[0] in ms_i2c_xfer_write: Slave dev NAK, Addr: 0x82, Data: 0xff 0x80  
+i2c_write_reg Unable to send data: Connection timed out
+ERROR: Bus[0] in ms_i2c_xfer_write: Slave dev NAK, Addr: 0x82, Data: 0xee 0x1  
+i2c_write_reg Unable to send data: Connection timed out
+ERROR:Bus[0] in ms_i2c_xfer_write: Slave dev NAK, Addr: 0x82, Data: 0xff 0x81  
+i2c_write_reg Unable to send data: Connection timed out
+ERROR: Bus[0] in ms_i2c_xfer_write: Slave dev NAK, Addr: 0x82, Data: 0x0  
+i2c_read_reg Unable to send data: Connection timed out
+x 2d00 y 1400
+x 2d00 y 1400
+[fpga][Info][10[ss_gpi_intc_domain_alloc] hw:43 -> v:61
+284]:#########[fpga]: real_x:11520 real_y:5120 x:11520 y:5120 version:41.28 fpga_online 1########
+[fpga][Info][10284]:#########[commit]:V1.2.1 --- a928a0a8_20b0ae65f ########
+hl_tpool_create_thread 0x6e490
+[tmc2209][Info][10291]:tmc2209_init
+gstat 1
+axis_endstop_enable: axIs index 0 endstop_index 0 enable 0 1
+axis index 0 endstop_index 0 enable 0[MS_PM_INTC] hw:71 -> v:62
+[ss_gpi_intc_domain_alloc] hw:45 -> v:63
+ 2
+axis index 0 endstop_index 0 enable 0 3
+axis_endstop_enable: axis index 0 endstop_index 1 enable 0 1
+axis index 0 endstop_index 1 enable 0 2
+axis index 0 endstop_index 1 enable 0 3
+axis_endstop_enable: axis index 0 endstop_index 2 enable 0 1
+axis index 0 endstop_index 2 enable 0 2
+axis_endstop_enable: axis index 0 endstop_index 3 enable 0 1
+axis index 0 endstop_index 3 enable 0 2
+axis_endstop_enable: axis index 0 endstop_index 4 enable 1 1
+axis index 0 endstop_index 4 enable 1 2
+[axis][Info][10299]:index 0 v0 0.050000 accleration 5.000000 dt 0.007980
+[fpga_extend][Info][10300]:In: f0 = 80 accleration = 8000 df = 60 dt = 0.007980
+[fpga_extend][Info][10323]:TABLE PARAM 20 624999 15 398999
+[fq6630][Info][10337]:GCONF 4
+[fq6630][Info][10338]:GCONF 100c3
+[fq6630][Info][10338]:GCONF 0
+[fq6630][Info][10339]:GCONF 0
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enAble 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 0 enable 0 1
+axis index 1 endstop_index 0 enable 0 2
+axis index 1 endstop_index 0 enable 0 3
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 1 enable 0 1
+axis index 1 endstop_index 1 enable 0 2
+axis index 1 endstop_index 1 enable 0 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 2 enable 0 1
+axis index 1 endstop_index 2 enable 0 2
+axis_endstop_Enable: axis index 1 endstop_index 3 enable 0 1
+axis index 1 endstop_index 3 enable 0 2
+[axis][Info][10344]:index 1 axis_params_updata max stop:constant->target_position_in_step 19911
+#1#verify digest:6e ad fa 84 f d6 39 da 2b 9e 39 c7 35 af 7d d0 
+#2#verify digest:6e ad fa 84 f d6 39 da 2b 9e 39 c7 35 af 7d d0 
+hl_tpool_create_thread 0xafae0
+hl_tpool_create_thread 0xa93c8
+hl_tpool_create_thread 0xabcb0
+hl_tpool_create_thread 0xaa5e8
+hl_tpool_create_thread 0xad180
+[hl_net][Info][11376]:eth_callback
+hl_tpool_create_thread 0x66c44
+[cs1237]:cs1237_open
+hl_tpool_create_thread 0x66204
+[ai_camera][Debug][11408]:serial open sock : 27
+hl_tpool_create_thread 0x6444c
+[aic_tlp][Debug][11410]:disk_path : /media/mmcblk0p2
+[aic_tlp][Debug][11412]:fp open
+[aic_tlp][Debug][11412]:fp != NULL
+[hl_net][Info][11425]:#########thread mREQUEST_UP
+sg eth0 event 1 status 0#########
+ 
+
+17589 aic_log
+
+21 log
+
+0 log2
+
+925334 log1
+
+file total : 0MB
+hl_tpool_create_thread 0x41bcc
+REQUEST_UP
+hl_tpool_create_thread 0xa78e4
+hl_tpool_create_thread 0x706a8
+hl_tpool_crandom: crng init done
+reate_thread 0x89198
+enter mp4_handle_routine
+[rtsp_server][Info][11541]:rtp sock : 28
+[rtsp_server][Info][11541]:rtcp sock : 29
+[rtsp_server][Info][11542]:socket success[704774146
+ , fd_socket [rtsp_server][Info][11542]:bind success
+[rtsp_server][Info][11542]:listen success
+hl_tpool_create_thread 0x8a874
+hl_tpool_create_thread 0x87aa0
+[sdcp_v3][Info][11545]:enter pthread sdcclient [575] connected, module:sys
+p_udp_routine!
+ai camera online
+hl_tpool_create_thread 0x87728
+Starting WS listener on ws://0.0.0.0:3030/websocket
+[core][Info][11595]:verify auth ok
+hl_tpool_create_thread 0x45020
+[core][Info][11598]:core_routine start
+[widget][Info][11601]:widget_bin_header.window_numbers = 41
+REQUEST_UP
+[cs1237]:requst_conf_reg 1c conf_reg 1c
+[sdcp_v3_action][Debug][11643]:sdcp_v3_status_report
+skip done sync...
+item = 0
+init_enter = 0
+[sdcp_v3_action][Debug][11776]:payload : {"Status":{"CurrentStatus":[4],"PrintScreen":426.458,"ReleaseFilm":4,"TempOfUVLED":30.523397445678711,"TimeLapseStatus":1,"PrintInfo":{"Status":0,"CurrentLayer":0,"Tota}
+[sdcp_v3_action][Debug][11876]:sdcp_v3_status_report
+[sdcp_v3_action][Debug][11997]:sdcp_v3status_report
+x 2d00 y 1400
+lcd online 1
+endstop_index 2 endstop_enable 0
+endstop_index 3 endstop_enable 0
+[axis][Info][12793]:axis_move: index 0 460.000000 4.500000 736000 7200 flag d
+[axis][Info][12793]:axis_move: index 0 -5.000000 4.500000 -8000 7200 flag 1
+[axis][Info][12793]:axis_move: index 0 460.000000 1.000000 736000 1600 flag d
+endstop_index 2 endstop_enable 1
+endstop_index 3 endstop_enable 1
+axis_endstop_enable: axis index 0 endstop_index 2 enable 0 1
+axis index 0 endstop_index 2 enable 0 2
+axis_endstop_enable: axis index 0 endstop_index 3 enable 0 1
+axis index 0 endstop_index 3 enable 0 2
+axis_endstop_enable: axis index 0 endstop_index 0 enable 0 1
+axis index 0 endstop_index 0 enable 0 2
+axis index 0 endstop_index 0 enable 0 3
+axis_endstop_enable: axis index 0 endstop_index 1 enable 1 1
+axis index 0 endstop_index 1 enable 1 2
+axis index 0 endstop_index 1 enable 1 3
+[axis][Info][12832]:axis_handle: index 0 constant->target_position_in_step 736000 step 736000 speed 7200
+[stepper][Info][12832]:stepper_move:index 0 step 736000 speed 7150 wait 0
+[fpga_extend][Info][12832]:fpga_stepper_ctrl: speed = 7150, _speed = 119
+axIs_endstop_enable: axis index 0 endstop_index 1 enable 0 1
+axis index 0 endstop_index 1 enable 0 2
+axis index 0 endstop_index 1 enable 0 3
+[axis][Info][13088]:constant->sg_trigered = 0
+[axis][Info][13088]:index 0 max stop:constant->target_position_in_step 368000 homing_state 2
+axis_endstop_enable: axis index 0 endstop_index 0 enable 0 1
+axis index 0 endstop_index 0 enable 0 2
+axis index 0 endstop_index 0 enable 0 3
+axis_endstop_enable: axis index 0 endstop_index 1 enable 0 1
+axis index 0 endstop_index 1 enable 0 2
+axis index 0 endstop_index 1 enable 0 3
+[axis][Info][13108]:axis_handle: index 0 constant->target_position_in_step 360000 step -8000 speed 7200
+[stepper][Info][13108]:stepper_move:index 0 step -8000 speed 7150 wait 0
+[fpga_extend][Info][13108]:fpga_stepper_ctrl: speed = 7150, _speed = 119
+[hl_wlan][Info][13364]:wlan_interface_append
+[hl_wlan][Info][13364]:wpa_supplicant don't exist
+[hl_camera][Info][13542]:found camera 1
+[hl_camera][Debug][13542]:min : 1 , sec : 2147483647
+[hl_camera][Info][13542]:found camera 0
+[hl_camera][Debug][13542]:min : 0 , sec : 1
+[ai_camera][Info][13542]:index 0 type 1 flags 1 description Motion-JPEG pixelformat 47504a4d
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1920 ch 1080
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1280 ch 720
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 800 ch 600
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 480
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 360
+[ai_camera][Info][13542]:index 1 type 1 flags 0 description YUYV 4:2:2 pixelformat 56595559
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 480
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 360
+[ai_camera][Info][13542]:index 2 type 1 flags 1 description H.264 pixelformat 34363248
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1920 ch 1080
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1280 ch 720
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 800 ch 600
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 480
+[ai_camera][Info][13542]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 360
+width 1280 height 720 pixelformat 47504a4d
+mmap_buf_count 2
+[ai_camera][Debug][13551]:aic init
+############################################ ai camera init############################################
+[ai_camera][Info][13644]:camera capture on
+hl_tpool_create_thread 0x64a0c
+camera thread start 37
+[ai_camera][Debug][13644]:capture on
+[hl_camera][Info][13644]:final found devname video0
+[hl_camera][Info][13644]:sec video : video1
+[hl_camera][Info][13644]:camera supported :V4L2_CAP_EXT_PIX_FORMAT
+[hl_camera][Info][13644]:index 0 type 1 flags 1 description Motion-JPEG pixelformat 47504a4d
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1920 ch 1080
+[hl_camera][Info][13644]:V4L2_FRMSIZE_YPE_DISCRETE: cw 1280 ch 720
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 800 ch 600
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 480
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 360
+[hl_camera][Info][13644]:index 1 type 1 flags 0 description YUYV 4:2:2 pixelformat 56595559
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 480
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 360
+[hlcamera][Info][13644]:index 2 type 1 flags 1 description H.264 pixelformat 34363248
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1920 ch 1080
+[hl_camera][Info][13644]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 1280 ch 720
+[hl_camera][Info][13645]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 800 ch 600
+[hl_camera][Info][13645]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 480
+[hl_camera][Info][13645]:V4L2_FRMSIZE_TYPE_DISCRETE: cw 640 ch 360
+[hl_camera][Info][13646]:width 1280 height 720 pixelformat 34363248
+[hl_camera][Info][13651]:mmap_buf_count 2
+[hl_camera][Info][13651]:############################################camera init video1############################################
+[sdcp_v3_action][Debug][13821]:sdcp_v3_status_report
+start_addr=(0x8000), end_addr=(0x10000), buffer_size=(0x8000), smp_number_max=(4096)
+Successfully initialized wpa_supplicant
+rfkill: Cannot open RFKILL control device
+[hl_wlan][Info][14181]:wlan init
+[hl_net][Info][14185]:wlan_callback: status 2
+[hl_net][Info][14185]:#########thread msg wlan0 event 0 status 0#########
+[hl_net][Info][14185]:net_init wlan0 enable 1
+[hl_net][Info][14185]:net_enable sm received event_id -2
+[hl_net][Info][14185]:net_enable sm received event_id 0
+[hl_wlan][Info][14200]:append ssid <redacted> psk <redacted>
+udhcpc: started, v1.34.1
+udhcpc: broadcasting discover
+axis_endstop_enable: axis index 0 endstop_index 0 enable 0 1
+axis index 0 endstop_index 0 enable 0 2
+axis index 0 endstop_index 0 enable 0 3
+axis_endstop_enable: axis index 0 endstop_index 1 enable 1 1
+axis index 0 endstop_index 1 enable 1 2
+axis index 0 endstop_index 1 enable 1 3
+[axis][Info][15164]:axis_handle: index 0 constant->target_position_in_step 1096000 step 736000 speed 1600
+[stepper][Info][15164]:stepper_move:index 0 step 736000 speed 1596 wait 0
+[fpga_extend][Info][15164]:fpga_stepper_ctrl: speed = 1596, _speed = 27
+udhcpc: broadcasting discover
+[hl_net][Info][20143]:wlan_callback: status 3
+[hl_wlan][Info][20144]:current ssid not request ssid
+[hl_wlan][Info][20144]:wlan connected bssid e4:fa:c4:fa:8f:a1 ssid <redacted>
+[sdcp_v3_action][Debug][20224]:sdcp_v3_status_report
+axis_endstop_enable: axis index 0 endstop_index 1 enable 0 1
+axis index 0 endstop_index 1 enable 0 2
+axis index 0 endstop_index 1 enable 0 3
+[axis][Info][20337]:constant->sg_trigered = 0
+[axis][Info][20337]:index 0 max stop:constant->target_position_in_step 368000 homing_state 3
+axis_endstop_enable: axis index 0 endstop_index 2 enable 1 1
+axis index 0 endstop_index 2 enable 1 2
+axis_endstop_enable: axis index 0 endstop_index 3 enable 1 1
+axis index 0 endstop_index 3 enable 1 2
+[axis][Info][20378]:index 0 homing_state 3 home_succeed 1
+hl_tpool_create_thread 0x63678
+[sg][Info][20435]:sg_routine start
+[sg][Info][20437]:sg_calibrate positioning done
+[app][Info][20437]:SG_CMD_START_CALIBRATE_SKIP_HOME
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for <redacted>, server <redacted>
+udhcpc: lease of <redacted> obtained from <redacted>, lease time 7200
+deleting routers
+adding dns <redacted>
+adding dns <redacted>
+[hl_net][Info][21134]:#########thread msg wlan0 event 2 status 2#########
+[hl_net][Info][21134]:nEt_enable sm received event_id 10
+[hl_net][Info][21135]:net_enable hl_callback_call1
+[hl_net][Info][21135]:net_enable hl_callback_call2
+[hl_net][Info][21135]:net_enable hl_callback_call1
+[hl_net][Info][21135]:net_enable hl_callback_call2
+[hl_net][Info][21135]:net_enable hl_sm_send_event NET_SM_EVENT_ID_DHCP_DISABLE
+[hl_net][Info][21185]:#########thread msg wlan0 event 0 status 2#########
+[hl_net][Info][21185]:net_enable sm received event_id 2
+[hl_net][Info][21235]:#########thread msg wlan0 event 3 status 2#########
+[hl_net][Info][21235]:net_enable sm received event_id 6
+[hl_net][Info][21235]:dhcp success
+[hl_net][Info][21235]:dns 0 <redacted>
+[hl_net][Info][21235]:dns 1 <redacted>
+[hl_net][Info][21285]:net_enable sm received event_id 1
+[hl_net][Info][21381]:net_enable sm received event_id 9
+[hl_net][Info][21431]:net_enable sm received event_id 0
+udhcpc: started, v1.34.1
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for <redacted>, server <redacted>
+udhcpc: lease of <redacted> obtained from <redacted>, lease time 7200
+deleting routers
+adding dns <redacted>
+adding dns <redacted>
+[hl_net][Info][21848]:net_enable sm received event_id 2
+[hl_net][Info][21898]:net_enable sm received event_id 6
+[hl_net][Info][21899]:dhcp success
+[hl_net][Info][21899]:dns 0 <redacted>
+[hl_net][Info][21899]:dns 1 <redacted>
+[hl_net][Info][22379]:wlan0 lan connected
+[Hl_net][Info][22449]:wlan0 wan connected
+[sdcp_v3][Info][22455]:sdcp :: udp init
+[ota][Info][22490]:AIC get version start
+[ota][Info][23433]:respone : {"code":"000000","messages":null,"data":{"update":false,"version":null,"packageUrl":null,"firmwareType":0,"packageHash":null,"updateStrategy":0,"log":null,"timeMS":0},"success":tru}
+update = 0
+[ota][Info][23433]:pthread exit
+[app][Info][23479]:ota task stage2 success
+[app][Info][23479]:is_aic_upgrade = 0
+[sdcp_v3][Info][23486]:ws_client_register ret = 0
+[ota][Info][23488]:System get version start
+[ota][Info][23488]:curl url : https://mms.chitubox.com/mainboardVersionUpdate/getInfo.do7?machineType=ELEGOO[sdcp_v3][Debug][23507]:ws : {"Id":"f25273b12b094c5a8b9513a30ca60049","Data":{"Cmd":0,"Data":{},"Requ}
+[sdcp_v3][Debug][23507]:ws : {"Id":"f25273b12b094c5a8b9513a30ca60049","Data":{"Cmd":1,"Data":{},"RequestID":"308a96442df64d0a829644bf3aa7f735","MainboardID":"661d419a78a60100","TimeStamp":1720788566795,"From":}
+[sdcp_v3][Debug][23508]:ws : {"Id":"f25273b12b094c5a8b9513a30ca60049","Data":{"md":386,"Data":{"Enable":1},"RequestID":"0906638f80964596bee5cce14b2be8a2","MainboardID":"661d419a78a60100","TimeStamp":1720788566}
+[sdcp_v3][Debug][23508]:ws : {"Id":"f25273b12b094c5a8b9513a30ca60049","Data":{"Cmd":320,"Data":{},"RequestID":"497d53f13bd8478b90c689bb8508ebc7","MainboardID":"661d419a78a60100","TimeStamp":1720788566795,"From}
+[sdcp_v3_handler][Debug][23558]:map[0] - desc : request status
+[sdcp_v3][Debug][23558]:io align  = 2048
+[sdcp_v3][Debug][23558]:io size = 219
+[sdcp_v3_action][Debug][23575]:sdcp_v3_status_report
+[sdcp_v3][Debug][23575]:io align  = 2048
+[sdcp_v3][Debug][23575]:io size = 1130
+[sdcp_v3_handler][Debug][23658]:map[1] - desc : request attribute
+[sdcp_v3][Debug][23658]:io align  = 2048
+[sdcp_v3][Debug][23658]:io size = 1353
+[sdcp_v3_action][Debug][23675]:payload : {"Status":{"CurrentStatus":[4],"PrintScreen":426.458,"ReleaseFilm":4,"TempOfUVLED":30.583286285400391,"TimeLapseStatus":1,"PrintInfo":{"Status":0,"CurrentLayer":0,"Tota}
+[sdcp_v3][Debug][23676]:io align  = 2048
+[sdcp_v3][Debug][23676]:io size = 1706
+[sdcp_v3_handler][Debug][23759]:map[12] - desc : stream live
+[sdcp_v3][Debug][23763]:io align  = 2048
+[sdcp_v3][Debug][23763]:io size = 1974
+[sdcp_v3_action][Debug][23776]:sdcp_v3_status_report
+[sdcp_v3][Debug][23776]:io align  = 2048
+[sdcp_v3][Debug][23776]:io size = 2885
+[sdcp_v3_handler][Debug][23863]:map[10] - desc : get history
+[sdcp_v3_handler][Debug][23863]:{"Id:"f25273b12b094c5a8b9513a30ca60049","Data":{"Cmd":320,"Data":{"Ack":0,"HistoryData":["b9dd4574-403c-11ef-a26d-a89609276a98","f4d0a890-4039-11ef-a26d-a89609276a98","05a1e914-}
+[sdcp_v3][Debug][23863]:io align  = 2048
+[sdcp_v3][Debug][23863]:io size = 3399
+[sdcp_v3_handler][Debug][23863]:ret_count : 514
+respone : {"code":"000000","messages":null,"data":{"update":false,"version":null,"packageUrl":null,"firmwareType":0,"packageHash":null,"updateStrategy":0,"log":null,"timeMS":0},"success":true}
+sys update = 0
+[app][Info][24223]:get sys ota success
+[app][Info][24223]:is_sys_upgrade = 0
+[sg][Info][25444]:sg_calibrate done
+endstop_index 4 endstop_enable 1
+endstop_index 2 endstop_enable 1
+[sg][Info][25487]:sg_routine stop
+axis_endstop_enable: axis index 0 endstop_index 4 enable 1 1
+axis index 0 endstop_index 4 enable 1 2
+[axis][Info][25491]:axis_move: index 0 -5.000000 0.100000 -8000 160 flag 1
+axis_endstop_enable: axis index 0 endstop_index 2 enable 1 1
+axis index 0 endstop_index 2 enable 1 2
+axis_endstop_enable: axis index 0 endstop_index 0 enable 0 1
+axis index 0 endstop_index 0 enable 0 2
+axis index 0 endstop_index 0 enable 0 3
+axis_endstop_enable: axis index 0 endstop_index 1 enable 0 1
+axis index 0 endstop_index 1 enable 0 2
+axis index 0 endstop_index 1 enable 0 3
+[axis][Info][25510]:axis_handle: index 0 constant->target_position_in_step 360000 step -8000 speed 160
+[stepper][Info][25510]:stepper_move:index 0 step -8000 speed 127 wait 0
+[fpga_extend][Info][25510]:fpga_stepper_ctrl: speed = 127, _speed = 2
+[axis][Info][28497]:axis_move: index 1 280.000000 36.000000 39822 5120 flag d
+[axis][Info][28497]:axis_move: index 1 -60.000000 36.000000 -8533 5120 flag 1
+[axis][Info][28497]:axis_move: index 1 280.000000 36.000000 39822 5120 flag d
+axis_endstop_enable: axis index 1 endstop_index 0 enable 0 1
+axis index 1 endstop_index 0 enable 0 2
+axis index 1 endstop_index 0 enable 0 3
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 1 enable 1 1
+axis index 1 endstop_index 1 enable 1 2
+axis index 1 endstop_index 1 enable 1 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 1 polarity 0 val 0
+fq6630 set enable val 5
+[axis][Info][28518]:axis_handle: index 1 constant->target_position_in_step 59733 step 39822 speed 5120
+[stepper][Info][28518]:stepper_move:index 1 step 39822 speed 5120 wait 0
+axis_endstop_enable: axis index 1 endstop_index 1 enable 0 1
+axis index 1 endstop_index 1 enable 0 2
+axis index 1 endstop_index 1 enable 0 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+[axis][Info][28556]:constant->sg_trigered = 0
+[axis][Info][28556]:index 1 max stop:constant->target_position_in_step 19911 homing_state 2
+axis_endstop_enable: axis index 1 endstop_index 0 enable 0 1
+axis index 1 endstop_index 0 enable 0 2
+axis index 1 endstop_index 0 enable 0 3
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 1 enable 0 1
+axis index 1 endstop_index 1 eNable 0 2
+axis index 1 endstop_index 1 enable 0 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+[axis][Info][28578]:axis_handle: index 1 constant->target_position_in_step 11378 step -8533 speed 5120
+[stepper][Info][28578]:stepper_move:index 1 step -8533 speed 5120 wait 0
+axis_endstop_enable: axis index 1 endstop_index 0 enable 0 1
+axis index 1 endstop_index 0 Enable 0 2
+axis index 1 endstop_index 0 enable 0 3
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 1 enable 1 1
+axis index 1 endstop_index 1 enable 1 2
+axis index 1 endstop_index 1 enable 1 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 1 polarity 0 val 0
+fq6630 set enable val 5
+[axis][Info][30562]:axis_handle: index 1 constant->target_position_in_step 51200 step 39822 speed 5120
+[stepper][Info][30562]:stepper_move:index 1 step 39822 speed 5120 wait 0
+axis_endstop_enable: axis index 1 endstop_index 1 enable 0 1
+axis index 1 endstop_index 1 enable 0 2
+axis index 1 endstop_index 1 enable 0 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+[axis][Info][32462]:constant->sg_trigered = 0
+[axis][Info][32462]:index 1 max stop:constant->target_position_in_step 19911 homing_state 3
+[axis][Info][32482]:index 1 homing_state 3 home_succeed 1
+[axis][Info][32490]:axis_move: index 1 0.000000 40.000000 0 5688 flag 0
+[axis][Info][32493]:axis_handle: index 1 axis_handle raw step 0 target_position_in_step 19911  relative_step -19911
+axis_endstop_enable: axis index 1 endstop_Index 0 enable 0 1
+axis index 1 endstop_index 0 enable 0 2
+axis index 1 endstop_index 0 enable 0 3
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 1 enable 0 1
+axis index 1 endstop_index 1 enable 0 2
+axis index 1 endstop_index 1 enable 0 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+[axis][Info][32494]:axis_handle: index 1 constant->target_position_in_step 0 step -19911 speed 5688
+[stepper][Info][32494]:stepper_move:index 1 step -19911 speed 5688 wait 0
+[axis][Info][35517]:axis_move: index 1 0.000000 36000000 0 5120 flag 0
+[axis][Info][35526]:axis_handle: index 1 axis_handle raw step 0 target_position_in_step 4536  relative_step -4536
+axis_endstop_enable: axis index 1 endstop_index 0 enable 0 1
+axis index 1 endstop_index 0 enable 0 2
+axis index 1 endstop_index 0 enable 0 3
+fq6630_endstop_enable: endstop_index 3 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+axis_endstop_enable: axis index 1 endstop_index 1 enable 0 1
+axis index 1 endstop_index 1 enable 0 2
+axis inDex 1 endstop_index 1 enable 0 3
+fq6630_endstop_enable: endstop_index 4 endstop->endstop_index 0 enable 0 polarity 0 val 0
+fq6630 set enable val 4
+[axis][Info][35527]:axis_handle: index 1 constant->target_position_in_step 0 step -4536 speed 5120
+[stepper][Info][35527]:stepper_move:index 1 step -4536 speed 5120 wait 0
+item == 97196
+[sdcp_v3_action][Debug][40393]:payload : {"Status":{"CurrentStatus":[0],"PrintScreen":426.458,"ReleaseFilm":4,"TempOfUVLED":30.717466354370117,"TimeLapseStatus":1,"PrintInfo":{"Status":0,"CurrentLayer":0,"Tota}
+[sdcp_v3][Debug][40393]:io align  = 2048
+[sdcp_v3][Debug][40393]:io size = 349
+[sdcp_v3_action][Debug][40493]:sdcp_v3_status_report
+[sdcp_v3][Debug][40494]:io align  = 2048
+[sdcp_v3][Debug][40494]:io size = 1260
+[app][Info][40569]:ota task stage4
+ Stemp_sensor][Info][510924:temp_sensor_online_status = 1, temp_sensor_value = 30.375473
+[temp_sensor][Info][1011667]:temp_sensor_online_status = 1, temp_sensor_value = 30.294678
+[temp_sensor][Info][1512406]:temp_sensor_online_status = 1, temp_sensor_value = 30.463362
+[temp_sensor][Info][2013145]:temp_sensor_online_status = 1, temp_sensor_value = 30.356070
+[temp_sensor][Info][2513876]:temp_sensor_online_status = 1, temp_sensor_value = 30.335081
+[temp_sensor][Info][3014619]:temp_sensor_online_status = 1, temp_sensor_value = 30.376404
+[rtsp_server][Info][3121688]:new client31 [<redacted>,57192]connect success
+create socket = 31
+sockfd = 31
+tsp_server][Info][3121704]:rtsp create success
+sockfd = 31
+[rtsp_server][Info][3101704]:client disconnect
+[rtsp_server][Info][3121704]:rtsp_worker_fun out
+[rtsp_server]nfo][3122986]:new client43 [<redacted>,57217]connect success
+create socket = 43
+sockfd = 43
+[rtsp_server][Info][3123000]:rtsp create success
+sockfd = 43
+[rtsp_server][Info][3123000]:client disconnect
+[rtsp_server][Info][3123000]:rtsp_worker_fun out
+[rtsp_server][Info][3128029]:new client31 [<redacted>,58049]connect success
+create socket = 31
+[rtsp_server][Info][3128037]:new client54 [<redacted>,58125]connect success
+create socket = 54
+sockfd = 31
+[rtsp_server][Info][3128037]:rtsp create success
+sockfd = 31
+[rtsp_server][Info][3128037]:client disconnect
+[rtsp_server][Info][3128037]:rtsp_worker_fun out
+sockfd = 54
+[rtsp_server][Info][3128042]:rtsp create success
+sockfd = 54
+[rtsp_server][Info][3128042]:client disconnect
+[rtsp_server][Info][3128042]:rtsp_worker_fun out
+[rtsp_server][Info][3128196]:new client43 [<redacted>,58151]connect success
+create socket = 43
+sockfd = 43
+[rtsp_server][Info][3128206]:rtsp create success
+sockfd = 43
+[rtsp_server][Info][3128206]:client disconnect
+[rtsp_server][Info][3128206]:rtsp_worker_fun out
+[rtsp_server][Info][3128988]:new client31 [<redacted>,58138]connect success
+create socket = 31
+sockfd = 31
+[rtsp_server][Info][3128992]:rtsp create success
+sockfd = 31
+[rtsp_server][Info][3128992]:client disconnect
+[rtsp_server][Info][3128992]:rtsp_worker_fun out
+tsp_server][Info][3129502]:new client43 [<redacted>,58178]connect success
+create socket = 43
+sockfd = 43
+[rtsp_server][Info][3129515]:rtsp create success
+sockfd = 43
+[rtsp_server][Info][3129515]:client disconnect
+[rtsp_server][Info][3129515]:rtsp_worker_fun out
+tsp_server][Info][3130802]:new client31 [<redacted>,59147]connect success
+create socket = 31
+sockfd = 31
+tsp_server][Info][3130820]:rtsp create success
+sockfd = 31
+[rtsp_server][Info][3130820]:client disconnect
+[rtsp_server][Info][3130820]:rtsp_worker_fun out
+[temp_sensor][Info][3515370]:temp_sensor_online_status = 1, temp_sensor_value = 30.349072
+[hl_net][Info][3622057]:net_enable sm received event_id 5
+[hl_net][Info][3622057]:Dhcp success
+[hl_net][Info][3622057]:dns 0 <redacted>
+[hl_net][Info][3622057]:dns 1 <redacted>
+[hl_net][Info][3622107]:net_enable sm received event_id 6
+[hl_net][Info][3622107]:dhcp success
+[hl_net][Info][3622107]:dns 0 <redacted>
+[hl_net][Info][3622107]:dns 1 <redacted>
+[temp_sensor][Info][4016104]:temp_sensor_online_status = 1, temp_sensor_value = 30.356083
+[temp_sensor][Info][4516854]:temp_sensor_online_status = 1, temp_sensor_value = 30.301207
+[temp_sensor]nfo][5017590]:temp_sensor_online_status = 1, temp_sensor_value = 30.301973
+[temp_sensor][Info][5518328]:temp_sensor_online_status = 1,temp_sensor_value = 30.396370
+
