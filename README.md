@@ -26,7 +26,7 @@ Informations about Elegoo Saturn 4 Ultra
 
 1. Boot Process Overview
 
-The device undergoes the following boot sequence:
+    The device undergoes the following boot sequence:
 
     Initial Program Loader (IPL): Begins with IPL g75a3331, indicating the bootloader version.
     U-Boot Bootloader:
@@ -74,7 +74,7 @@ The device undergoes the following boot sequence:
 
 4. Device Functionality
 
-Based on the log entries, the device appears to be a 3D printer with the following features:
+    Based on the log entries, the device appears to be a 3D printer with the following features:
 
     Motion Control:
         Axes: References to axis, stepper, endstop, and homing procedures
