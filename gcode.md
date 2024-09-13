@@ -51,225 +51,204 @@ each command does and how it affects your printer.
 
 # **MSLA Resin Printer G-code Command Documentation**
 
-## **Overview**
-
-- The `M5000` command is used to set or modify various machine settings.
-- `I<number>` identifies a specific registry or functional group within the printer (e.g., Z-axis, X-axis, motors,
-  leveling).
-- Each letter (`A`, `B`, `C`, etc.) refers to a specific parameter within that functional group, and the value
-  associated with that letter sets the desired configuration for that parameter.
-
-Each group (I<number>) and letter (A, B, C, etc.) affects different aspects of the printer’s operation, such as motor
-speed, axis limits, homing directions, and more.
+Sure! Below is a table that organizes the settings from your G-code dump, translating the Chinese comments into English
+and grouping them by the domain they control.
 
 ---
 
-## **General Format**
+### **Z-Axis Settings**
 
-```
-M5000 I<number> <letter><value> ; <comment>
-```
+| Command                     | Parameters      | Description                                                                                                                    |
+|-----------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| M5000 I0 A0 B230.000000     | B230.000000     | Z-axis travel distance (mm)                                                                                                    |
+| M5000 I0 A0 C20.000000      | C20.000000      | Maximum speed of Z-axis motor (mm/s)                                                                                           |
+| M5000 I0 A0 D0.000625000000 | D0.000625000000 | Distance per step for Z-axis motor (mm/step)                                                                                   |
+| M5000 I0 A0 E1              | E1              | Z-axis motor direction; 1 for positive, -1 for negative                                                                        |
+| M5000 I0 A0 F1              | F1              | Z-axis limit mode; 0: minimum limit, 1: maximum limit, 2: dual limit                                                           |
+| M5000 I0 A0 S1              | S1              | Z-axis homing direction; 1 for positive, -1 for negative                                                                       |
+| M5000 I0 A0 P4.500000       | P4.500000       | First-stage homing speed for Z-axis (mm/s)                                                                                     |
+| M5000 I0 A0 R1.000000       | R1.000000       | Second-stage homing speed for Z-axis (mm/s)                                                                                    |
+| M5000 I0 A0 T0.000000       | T0.000000       | Reverse movement distance before Z-axis homing (mm); used to prevent collision if limit switch is far from physical zero point |
+| M5000 I0 A0 X5.000000       | X5.000000       | Reverse movement distance after first limit trigger during Z-axis homing (mm)                                                  |
+| M5000 I0 A0 Y0.450001       | Y0.450001       | Z-axis zero position                                                                                                           |
+| M5000 I0 A0 Z1              | Z1              | Z zero point and limit position setting; 0: same as limit position, 1: different from limit position                           |
+| M5000 I5 A0 B0              | B0              | Z-axis minimum limit polarity; 0 for low-level trigger, 1 for high-level trigger                                               |
+| M5000 I5 A0 C0              | C0              | Z-axis maximum limit polarity; 0 for low-level trigger, 1 for high-level trigger                                               |
+| M5000 I5 A0 D5.000000       | D5.000000       | Z-axis acceleration (mm/s²)                                                                                                    |
+| M5000 I5 A0 E0.050000       | E0.050000       | Initial speed of Z-axis (mm/s)                                                                                                 |
+| M5000 I6 F9                 | F9              | Z-axis motor current at idle (0-31); Current = (N+1)/32 * 2.5 A                                                                |
+| M5000 I6 S18                | S18             | Z-axis motor operating current (0-31); Current = (N+1)/32 * 2.5 A                                                              |
 
-- **M5000**: Command to set the configuration.
-- **I<number>**: Defines the functional group (e.g., Z-axis, X-axis, motor settings, etc.).
-- **<letter><value>**: Parameter and value to be set.
-- **; <comment>**: Optional comment explaining the setting.
+### **X-Axis Settings**
 
----
+| Command                     | Parameters      | Description                                                                                          |
+|-----------------------------|-----------------|------------------------------------------------------------------------------------------------------|
+| M5000 I6 A12                | A12             | X-axis motor current at idle (0-31); Current = (N+1)/32 * 2.5 A                                      |
+| M5000 I6 B25                | B25             | X-axis motor operating current (0-31); Current = (N+1)/32 * 2.5 A                                    |
+| M5000 I6 C36.000000         | C36.000000      | X-axis acceleration (degrees/s²)                                                                     |
+| M5000 I6 D36.000000         | D36.000000      | X-axis deceleration (degrees/s²)                                                                     |
+| M5000 I6 E36.000000         | E36.000000      | Initial speed of X-axis (degrees/s)                                                                  |
+| M5000 I6 P1                 | P1              | X-axis current change step value per time (1-31)                                                     |
+| M5000 I6 R1000              | R1000           | X-axis current change interval (ms)                                                                  |
+| M5000 I0 A1 B140.000000     | B140.000000     | Total peeling angle of X-axis (degrees)                                                              |
+| M5000 I0 A1 C900.000000     | C900.000000     | Maximum speed of X-axis motor (degrees/s)                                                            |
+| M5000 I0 A1 D0.007031250000 | D0.007031250000 | Angle per step for X-axis motor (degrees/step)                                                       |
+| M5000 I0 A1 E1              | E1              | X-axis motor direction; 1 for positive, -1 for negative                                              |
+| M5000 I0 A1 F1              | F1              | X-axis limit mode; 0: minimum limit, 1: maximum limit, 2: dual limit                                 |
+| M5000 I0 A1 S1              | S1              | X-axis homing direction; 1 for positive, -1 for negative                                             |
+| M5000 I0 A1 P36.000000      | P36.000000      | First-stage homing speed for X-axis (degrees/s)                                                      |
+| M5000 I0 A1 R36.000000      | R36.000000      | Second-stage homing speed for X-axis (degrees/s)                                                     |
+| M5000 I0 A1 T0.000000       | T0.000000       | Reverse movement angle before X-axis homing (degrees); used to prevent collision                     |
+| M5000 I0 A1 X60.000000      | X60.000000      | Reverse movement angle after first limit trigger during X-axis homing (degrees)                      |
+| M5000 I0 A1 Y0.000000       | Y0.000000       | X-axis zero position                                                                                 |
+| M5000 I0 A1 Z1              | Z1              | X zero point and limit position setting; 0: same as limit position, 1: different from limit position |
+| M5000 I5 A1 B0              | B0              | X-axis minimum limit polarity; 0 for low-level trigger, 1 for high-level trigger                     |
+| M5000 I5 A1 C0              | C0              | X-axis maximum limit polarity; 0 for low-level trigger, 1 for high-level trigger                     |
+| M5000 I201 C40.000000       | C40.000000      | Manual control speed of X-axis (degrees/s)                                                           |
+| M5000 I201 D-10.000000      | D-10.000000     | Maximum zero position of X-axis; the range for adjustment after homing (degrees)                     |
 
-## **Z-Axis (I0)**
+### **Layer Settings for X-Axis**
 
-The Z-axis controls the movement of the build platform up and down.
+| Command               | Parameters | Description                                                                                       |
+|-----------------------|------------|---------------------------------------------------------------------------------------------------|
+| M5000 I200 A36.000000 | A36.000000 | First-stage return speed before N layers (high speed) (degrees/s)                                 |
+| M5000 I200 B36.000000 | B36.000000 | Second-stage return speed before N layers (low speed) (degrees/s)                                 |
+| M5000 I200 C36.000000 | C36.000000 | First-stage peeling speed before N layers (low speed) (degrees/s)                                 |
+| M5000 I200 D36.000000 | D36.000000 | Second-stage peeling speed before N layers (high speed) (degrees/s)                               |
+| M5000 I200 E0.000000  | E0.000000  | Second-stage return angle before N layers (degrees)                                               |
+| M5000 I200 F0.000000  | F0.000000  | First-stage peeling angle before N layers (degrees)                                               |
+| M5000 I200 S72.000000 | S72.000000 | First-stage return speed after N layers (high speed) (degrees/s)                                  |
+| M5000 I200 P72.000000 | P72.000000 | Second-stage return speed after N layers (low speed) (degrees/s)                                  |
+| M5000 I200 R72.000000 | R72.000000 | First-stage peeling speed after N layers (low speed) (degrees/s)                                  |
+| M5000 I200 T72.000000 | T72.000000 | Second-stage peeling speed after N layers (high speed) (degrees/s)                                |
+| M5000 I200 X0.000000  | X0.000000  | Second-stage return angle after N layers (degrees)                                                |
+| M5000 I200 Y0.000000  | Y0.000000  | First-stage peeling angle after N layers (degrees)                                                |
+| M5000 I201 A1         | A1         | X-axis return mode; 0: limit method, 1: fixed angle                                               |
+| M5000 I201 B1         | B1         | Rotary peeling mode; 0: both motors move simultaneously, 1: X-axis motor moves first, then Z-axis |
+| M5000 I201 E50        | E50        | N-layer value for X-axis                                                                          |
 
-### **Command Structure:**
+### **Secondary Layer Settings for X-Axis (S2)**
 
-```
-M5000 I0 <letter><value> ; <comment>
-```
+| Command                | Parameters  | Description                                                                                           |
+|------------------------|-------------|-------------------------------------------------------------------------------------------------------|
+| M5000 I210 A36.000000  | A36.000000  | S2: First-stage return speed before N layers (high speed) (degrees/s)                                 |
+| M5000 I210 B36.000000  | B36.000000  | S2: Second-stage return speed before N layers (low speed) (degrees/s)                                 |
+| M5000 I210 C36.000000  | C36.000000  | S2: First-stage peeling speed before N layers (low speed) (degrees/s)                                 |
+| M5000 I210 D36.000000  | D36.000000  | S2: Second-stage peeling speed before N layers (high speed) (degrees/s)                               |
+| M5000 I210 E0.000000   | E0.000000   | S2: Second-stage return angle before N layers (degrees)                                               |
+| M5000 I210 F0.000000   | F0.000000   | S2: First-stage peeling angle before N layers (degrees)                                               |
+| M5000 I210 S144.000000 | S144.000000 | S2: First-stage return speed after N layers (high speed) (degrees/s)                                  |
+| M5000 I210 P144.000000 | P144.000000 | S2: Second-stage return speed after N layers (low speed) (degrees/s)                                  |
+| M5000 I210 R144.000000 | R144.000000 | S2: First-stage peeling speed after N layers (low speed) (degrees/s)                                  |
+| M5000 I210 T144.000000 | T144.000000 | S2: Second-stage peeling speed after N layers (high speed) (degrees/s)                                |
+| M5000 I210 X0.000000   | X0.000000   | S2: Second-stage return angle after N layers (degrees)                                                |
+| M5000 I210 Y0.000000   | Y0.000000   | S2: First-stage peeling angle after N layers (degrees)                                                |
+| M5000 I211 A1          | A1          | S2: X-axis return mode; 0: limit method, 1: fixed angle                                               |
+| M5000 I211 B1          | B1          | S2: Rotary peeling mode; 0: both motors move simultaneously, 1: X-axis motor moves first, then Z-axis |
+| M5000 I211 E50         | E50         | S2: N-layer value for X-axis                                                                          |
 
-### **Parameters:**
+### **Printing Completion and Pause Settings**
 
-- **B<value>**: **Z-axis travel distance (mm)**
-    - Example: `M5000 I0 A0 B230.000000 ;Z轴行程(mm)`
-    - **Description**: Sets the maximum travel distance for the Z-axis in millimeters.
+| Command             | Parameters | Description                                                                                                            |
+|---------------------|------------|------------------------------------------------------------------------------------------------------------------------|
+| M5000 I1 A4.500000  | A4.500000  | Lifting speed after printing completion (mm/s)                                                                         |
+| M5000 I1 B60.000000 | B60.000000 | Relative distance lifted after printing completion (mm)                                                                |
+| M5000 I1 C1         | C1         | Lifting mode after printing completion; 0: lift to highest point, 1: lift to specified relative distance, 2: no action |
+| M5000 I1 D4.500000  | D4.500000  | Lifting speed after print pause (mm/s)                                                                                 |
+| M5000 I1 E60.000000 | E60.000000 | Relative distance lifted after print pause (mm)                                                                        |
+| M5000 I1 F1         | F1         | Lifting mode after print pause; 0: lift to highest point, 1: lift to specified relative distance, 2: no action         |
+| M5000 I1 S4.500000  | S4.500000  | Lifting speed after print stop (mm/s)                                                                                  |
+| M5000 I1 P60.000000 | P60.000000 | Relative distance lifted after print stop (mm)                                                                         |
+| M5000 I1 R1         | R1         | Lifting mode after print stop; 0: lift to highest point, 1: lift to specified relative distance, 2: no action          |
+| M5000 I1 T4.500000  | T4.500000  | Manual control speed (mm/s)                                                                                            |
 
-- **C<value>**: **Z-axis motor maximum speed (mm/s)**
-    - Example: `M5000 I0 A0 C20.000000 ;Z轴电机最高速度(mm/s)`
-    - **Description**: Defines the maximum speed at which the Z-axis motor can move.
+### **Light Source and Fan Settings**
 
-- **D<value>**: **Z-axis step size (mm/step)**
-    - Example: `M5000 I0 A0 D0.000625000000 ;Z轴电机每步对应的距离(mm/step)`
-    - **Description**: Sets the distance moved by the Z-axis per motor step. A smaller value increases the resolution.
+| Command        | Parameters | Description                                                                                               |
+|----------------|------------|-----------------------------------------------------------------------------------------------------------|
+| M5000 I2 B200  | B200       | Light source fan frequency                                                                                |
+| M5000 I2 C200  | C200       | Light source frequency                                                                                    |
+| M5000 I2 D200  | D200       | Illumination frequency                                                                                    |
+| M5000 I2 E3000 | E3000      | Buzzer frequency                                                                                          |
+| M5000 I3 B2    | B2         | Light source fan mode; 0: always on, 1: off at startup, 2: follow print status, 3: follow exposure status |
+| M5000 I3 C2    | C2         | Light source mode; 0: follow machine parameters, 1: follow print file, 2: combine both                    |
+| M5000 I4 B255  | B255       | Light source fan PWM (0-255)                                                                              |
+| M5000 I4 C255  | C255       | Light source PWM (0-255)                                                                                  |
+| M5000 I4 D255  | D255       | Illumination PWM (0-255)                                                                                  |
+| M5000 I4 E100  | E100       | Buzzer volume (0-100)                                                                                     |
+| M5000 I4 F0    | F0         | Screen orientation (0-3); 0: 0°, 1: 90°, 2: 180°, 3: 270°                                                 |
+| M5000 I4 S180  | S180       | Time to enter screensaver (s)                                                                             |
+| M5000 I4 P5    | P5         | Time to enter grayscale screensaver (min)                                                                 |
 
-- **E<value>**: **Z-axis motor direction**
-    - Example: `M5000 I0 A0 E1 ;Z轴电机方向;1为正方向,-1为反方向`
-    - **Description**: Determines the direction of the Z-axis motor.
-        - `1`: Positive direction
-        - `-1`: Negative direction
+### **Temperature and Sensor Settings**
 
-- **F<value>**: **Z-axis limit mode**
-    - Example: `M5000 I0 A0 F1 ;Z轴限位模式;0最小限位,1最大限位,2双限位`
-    - **Description**: Sets the limit switch mode for the Z-axis.
-        - `0`: Minimum limit
-        - `1`: Maximum limit
-        - `2`: Dual limit
+| Command      | Parameters | Description                                          |
+|--------------|------------|------------------------------------------------------|
+| M5000 I7 A80 | A80        | Temperature protection upper limit (℃)               |
+| M5000 I7 B1  | B1         | Temperature detection disable; 0: disable, 1: enable |
+| M5000 I8 A50 | A50        | Factory mode temperature sensor maximum value (℃)    |
+| M5000 I8 B0  | B0         | Factory mode temperature sensor minimum value (℃)    |
 
-- **S<value>**: **Z-axis homing direction**
-    - Example: `M5000 I0 A0 S1 ;Z轴归零方向;1为正方向,-1为反方向`
-    - **Description**: Sets the direction the Z-axis moves during homing.
-        - `1`: Positive direction
-        - `-1`: Negative direction
+### **Resin Detection and Calibration Settings**
 
-- **P<value>**: **Z-axis first stage homing speed (mm/s)**
-    - Example: `M5000 I0 A0 P4.500000 ;Z轴第一段归零速度(mm/s)`
-    - **Description**: Defines the speed of the Z-axis during the first stage of the homing process.
+| Command                | Parameters  | Description                                                                                  |
+|------------------------|-------------|----------------------------------------------------------------------------------------------|
+| M5000 I4 R0            | R0          | Resin value estimation disable; 0: disable, 1: enable                                        |
+| M5000 I4 T870.000000   | T870.000000 | Maximum capacity of the vat (ml)                                                             |
+| M5000 I4 X25.500000    | X25.500000  | Maximum abnormal line during actual resin detection stage (mm)                               |
+| M5000 I4 Y4.000000     | Y4.000000   | Minimum abnormal line during actual resin detection stage (mm)                               |
+| M5000 I203 B4.500000   | B4.500000   | Strain gauge calibration movement speed (mm/s)                                               |
+| M5000 I203 C30000      | C30000      | Maximum calibration time for strain gauge (ms)                                               |
+| M5000 I203 D5000       | D5000       | Strain gauge stationary judgment time (ms)                                                   |
+| M5000 I203 E50         | E50         | Strain gauge stationary judgment threshold                                                   |
+| M5000 I204 A45.000000  | A45.000000  | Resin detection starting position (mm); should be greater than the highest liquid level      |
+| M5000 I204 B2.000000   | B2.000000   | Resin detection ending position (mm); recommended 1mm or 2mm                                 |
+| M5000 I204 C0.050000   | C0.050000   | Resin detection step value (mm); recommended 0.05mm                                          |
+| M5000 I204 D2.500000   | D2.500000   | Resin detection movement speed (mm/s)                                                        |
+| M5000 I204 E200        | E200        | Resin detection trigger threshold; recognized as liquid level when stress exceeds this value |
+| M5000 I204 S143.000000 | S143.000000 | Vat width (mm); used for estimating volume based on detected liquid height                   |
+| M5000 I204 P244.000000 | P244.000000 | Vat height (mm); used for estimating volume based on detected liquid height                  |
+| M5000 I204 R100.000000 | R100.000000 | Compensation value for estimated resin detection volume (ml)                                 |
+| M5000 I205 A2.000000   | A2.000000   | Auto-leveling starting position (mm); should be greater than 1mm                             |
+| M5000 I205 B-2.000000  | B-2.000000  | Auto-leveling ending position (mm); recommended -1mm                                         |
+| M5000 I205 C0.050000   | C0.050000   | Auto-leveling step value (mm); recommended 0.05mm                                            |
+| M5000 I205 D2.000000   | D2.000000   | Auto-leveling movement speed (mm/s); should not be too fast                                  |
+| M5000 I205 E28000      | E28000      | Auto-leveling threshold; normally greater than 0                                             |
+| M5000 I206 C33000      | C33000      | Foreign object detection trigger threshold                                                   |
+| M5000 I206 D1          | D1          | Resin detection probe switch                                                                 |
+| M5000 I206 E10         | E10         | Number of resin detection probes                                                             |
+| M5000 I206 F-200       | F-200       | Minimum threshold for resin detection probes                                                 |
+| M5000 I206 S200        | S200        | Maximum threshold for resin detection probes                                                 |
 
-- **R<value>**: **Z-axis second stage homing speed (mm/s)**
-    - Example: `M5000 I0 A0 R1.000000 ;Z轴第二段归零速度(mm/s)`
-    - **Description**: Sets the Z-axis speed during the second stage of homing.
+### **AI Camera and Time-lapse Settings**
 
-- **T<value>**: **Z-axis reverse movement distance before homing (mm)**
-    - Example: `M5000 I0 A0 T0.000000 ;Z轴归零前反方向移动距离(mm)`
-    - **Description**: Defines the reverse movement distance to be taken before the Z-axis begins homing. This helps
-      avoid crashes if the limit switch is far from the physical zero point.
+| Command                | Parameters  | Description                                                            |
+|------------------------|-------------|------------------------------------------------------------------------|
+| M5000 I208 A1          | A1          | AI camera detection switch; 0: off, 1: on                              |
+| M5000 I208 B100.000000 | B100.000000 | AI camera detection position                                           |
+| M5000 I209 A1          | A1          | Time-lapse photography switch; 0: off, 1: on                           |
+| M5000 I209 B50.000000  | B50.000000  | Model height threshold not to perform time-lapse photography           |
+| M5000 I209 C30.000000  | C30.000000  | Model height to start time-lapse photography                           |
+| M5000 I209 D10         | D10         | Time-lapse photography interval layers                                 |
+| M5000 I209 E0          | E0          | Whether to move Z to zero position during manual homing; 0: no, 1: yes |
+| M5000 I209 F1          | F1          | Whether to move X to zero position during manual homing; 0: no, 1: yes |
+| M5000 I209 S10000      | S10000      | Time-lapse quick shot time (real time in ms)                           |
+| M5000 I209 P70         | P70         | Interval time between time-lapse quick shots (ms)                      |
 
-- **X<value>**: **Z-axis reverse movement distance after limit switch trigger (mm)**
-    - Example: `M5000 I0 A0 X5.000000 ;Z轴归零过程中第一次触发限位后反向移动的距离(mm)`
-    - **Description**: Sets how far the Z-axis should move in reverse after triggering the limit switch during the
-      homing process.
+### **Printing Time Estimation Settings**
 
-- **Y<value>**: **Z-axis zero position**
-    - Example: `M5000 I0 A0 Y0.450001 ;Z轴零点位置`
-    - **Description**: Defines the zero position for the Z-axis.
+| Command          | Parameters | Description                                             |
+|------------------|------------|---------------------------------------------------------|
+| M5000 I212 A8420 | A8420      | Slow mode before N layers, X-axis movement time (ms)    |
+| M5000 I212 B4410 | B4410      | Slow mode after N layers, X-axis movement time (ms)     |
+| M5000 I212 C8420 | C8420      | Fast mode before N layers, X-axis movement time (ms)    |
+| M5000 I212 D2430 | D2430      | Fast mode after N layers, X-axis movement time (ms)     |
+| M5000 I212 E0    | E0         | Estimated print compensation time (ms); can be negative |
 
-- **Z<value>**: **Z zero-point and limit position setting**
-    - Example: `M5000 I0 A0 Z1 ;Z零点与限位位置设置; 0:限位位置和Z的零点相同，1:限位位置即和Z的零点不同`
-    - **Description**: Determines whether the Z zero-point and limit position are the same.
-        - `0`: Same
-        - `1`: Different
+### **Save Parameters**
 
-- **B<value>**: **Z-axis minimum limit polarity**
-    - Example: `M5000 I5 A0 B0 ;Z轴最小限位极性;0为低电平触发;1为高电平触发`
-    - **Description**: Sets the polarity of the Z-axis minimum limit switch trigger.
-        - `0`: Low-level trigger
-        - `1`: High-level trigger
-
-- **C<value>**: **Z-axis maximum limit polarity**
-    - Example: `M5000 I5 A0 C0 ;Z轴最大限位极性;0为低电平触发;1为高电平触发`
-    - **Description**: Defines the polarity for the maximum limit switch of the Z-axis.
-        - `0`: Low-level trigger
-        - `1`: High-level trigger
-
-- **D<value>**: **Z-axis acceleration (mm/s²)**
-    - Example: `M5000 I5 A0 D5.000000 ;Z轴加速度(mm/s²)`
-    - **Description**: Sets the Z-axis acceleration in mm/s².
-
-- **E<value>**: **Z-axis initial speed (mm/s)**
-    - Example: `M5000 I5 A0 E0.050000 ;Z轴初始速度(mm/s)`
-    - **Description**: Sets the initial speed of the Z-axis when starting a movement.
-
----
-
-## **X-Axis (I1 and I200)**
-
-The X-axis controls the tilting of the vat, which is critical for the resin separation process.
-
-### **Command Structure:**
-
-```
-M5000 I1 <letter><value> ; <comment>
-M5000 I200 <letter><value> ; <comment>
-```
-
-### **Parameters:**
-
-- **B<value>**: **X-axis tilt total angle (degrees)**
-    - Example: `M5000 I0 A1 B140.000000 ;X轴离型总角度(度)`
-    - **Description**: Sets the total angle that the X-axis tilts for the detachment process.
-
-- **C<value>**: **X-axis motor maximum speed (degrees/s)**
-    - Example: `M5000 I0 A1 C900.000000 ;X轴电机最高速度(度/s)`
-    - **Description**: Defines the maximum speed for the X-axis motor.
-
-- **D<value>**: **X-axis step size (degrees/step)**
-    - Example: `M5000 I0 A1 D0.007031250000 ;X轴电机每步对应的角度(度/step)`
-    - **Description**: Sets the angle per step of the X-axis motor.
-
-- **E<value>**: **X-axis motor direction**
-    - Example: `M5000 I0 A1 E1 ;X轴电机方向;1为正方向,-1为反方向`
-    - **Description**: Determines the direction of the X-axis motor.
-        - `1`: Positive direction
-        - `-1`: Negative direction
-
-- **P<value>**: **X-axis first stage homing speed (degrees/s)**
-    - Example: `M5000 I0 A1 P36.000000 ;X轴第一段归零速度(度/s)`
-    - **Description**: Defines the speed of the X-axis during the first stage of homing.
-
-- **R<value>**
-
-  : **X-axis second stage homing speed (degrees/s)**  
-  - Example: `M5000 I0 A1 R36.000000 ;X轴第二段归零速度(度/s)`  
-  - **Description**: Sets the X-axis speed during the second stage of homing.
-
-- **B<value>**: **X-axis minimum limit polarity**
-    - Example: `M5000 I5 A1 B0 ;X轴最小限位极性;0为低电平触发;1为高电平触发`
-    - **Description**: Defines the polarity for the minimum limit switch of the X-axis.
-        - `0`: Low-level trigger
-        - `1`: High-level trigger
-
-- **C<value>**: **X-axis maximum limit polarity**
-    - Example: `M5000 I5 A1 C0 ;X轴最大限位极性;0为低电平触发;1为高电平触发`
-    - **Description**: Defines the polarity for the maximum limit switch of the X-axis.
-        - `0`: Low-level trigger
-        - `1`: High-level trigger
-
-- **S<value>**: **X-axis leveling speed after N layers (degrees/s)**
-    - Example: `M5000 I200 S72.000000 ;X轴N层后第一段回平速度<高速>(度/s)`
-    - **Description**: Sets the first stage leveling speed for the X-axis after printing N layers.
-
----
-
-## **Motor Currents and Speed Control (I6)**
-
-### **Command Structure:**
-
-```
-M5000 I6 <letter><value> ; <comment>
-```
-
-### **Parameters:**
-
-- **A<value>**: **X-axis motor current when stationary (0-31)**
-    - Example: `M5000 I6 A12 ;X轴静止状态下电机电流(0-31)`
-    - **Description**: Sets the motor current for the X-axis while stationary. The value `12`
-      represents `(12+1)/32 * 2.5 = 1.02A`.
-
-- **B<value>**: **X-axis motor running current (0-31)**
-    - Example: `M5000 I6 B25 ;X轴电机运行电流(0-31)`
-    - **Description**: Defines the motor current for the X-axis during operation. The value `25`
-      represents `(25+1)/32 * 2.5 = 2.03A`.
-
-- **F<value>**: **Z-axis motor current when stationary (0-31)**
-    - Example: `M5000 I6 F9 ;Z轴静止状态下电机电流(0-31)`
-    - **Description**: Sets the motor current for the Z-axis while stationary.
-
-- **S<value>**: **Z-axis motor running current (0-31)**
-    - Example: `M5000 I6 S18 ;Z轴电机运行电流(0-31)`
-    - **Description**: Defines the motor current for the Z-axis during operation.
-
----
-
-## **Other System Settings**
-
-### **Print Completion and Pause Lift (I1)**
-
-- **A<value>**: **Print completion lift speed (mm/s)**
-    - Example: `M5000 I1 A4.500000 ;完成打印抬升速度(mm/s)`
-    - **Description**: Sets the speed at which the Z-axis lifts after print completion.
-
-- **B<value>**: **Relative lift distance after print completion (mm)**
-    - Example: `M5000 I1 B60.000000 ;完成打印后抬升一段相对距离(mm)`
-    - **Description**: Defines the relative lift distance after print completion.
+| Command  | Parameters | Description             |
+|----------|------------|-------------------------|
+| M5999 I0 | I0         | Save machine parameters |
 
 ---
-
