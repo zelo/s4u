@@ -6,3 +6,4 @@ Everything is provided as is, I'm not responsible for any damage you cause to yo
 
 1. [G-code Documentation](gcode.md)
 2. [Hardware Documentation](hardware.md)
+3. [Anycubic Plate Adapter](anycubic_plate_adapter.md)
