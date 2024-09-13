@@ -2,6 +2,7 @@
 
 You will need to replace locking mechanism with insert (need ti print part, hex nut, 2 threaded inserts and 2 screws)
 Adapter uses friction fit, I printed mine with PLA 5 walls, 100% infill on bambulab x1c and it fits perfectly.
+Printer settings have to be adjusted to account for difference in height [See My Settings](examples/update.gcode)
 
 1. [Step File](anycubic_plate_adapter.step)
 2. Images
